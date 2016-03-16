@@ -12,7 +12,7 @@ public class User implements Serializable {
     private Integer userId;
     private String userName;
     private String password;
-    private Integer right;      //权限，0：一般用户，1：管理员用户
+    private Integer Authority = 0;      //权限，0：一般用户，1：管理员用户。默认为0
     private String phone;
     private String address;
 
@@ -44,12 +44,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Integer getRight() {
-        return right;
+    public Integer getAuthority() {
+        return Authority;
     }
 
-    public void setRight(Integer right) {
-        this.right = right;
+    public void setAuthority(Integer authority) {
+        this.Authority = authority;
     }
 
     public String getPhone() {
@@ -74,7 +74,7 @@ public class User implements Serializable {
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", right=" + right +
+                ", Authority=" + Authority +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 '}';
