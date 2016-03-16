@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface LightMapper {
     public List<Light> findAllLights();
-    public Light findLightById(int id);
+    public Light findLightById(Integer lightId);
     public List<Light> findLight(Light light);
     public void insertLight(Light light);
 }

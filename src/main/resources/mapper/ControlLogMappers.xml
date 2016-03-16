@@ -28,13 +28,13 @@
     </resultMap>
 
     <insert id="insertControlLog" parameterType="ControlLog" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO controllog (open_time, close_time, control_user_id, light_ids, status) VALUES (
+        INSERT INTO controllogs (open_time, close_time, control_user_id, light_ids, status) VALUES (
         #{openTime}, #{closeTime}, #{user.userId}, #{light_ids}, #{status}
         )
     </insert>
 
     <select id="findControlLogByTime" parameterType="com.gaogandeng.QueryCondition.ControlLogQuery" resultMap="ControlLogResult">
-        SELECT * FROM controllog WHERE TRUE
+        SELECT * FROM controllogs WHERE TRUE
         <if test="userId != null">
             AND control_user_id = #{userId}
         </if>

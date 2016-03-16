@@ -29,6 +29,10 @@ public class UserServiceImp implements UserService {
         userMapper.insertUser(user);
     }
 
+    public User findUserById(Integer userId) {
+        return userMapper.findUserById(userId);
+    }
+
     public UserMapper getUserMapper() {
         return userMapper;
     }

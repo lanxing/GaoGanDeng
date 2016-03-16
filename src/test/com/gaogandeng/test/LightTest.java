@@ -56,4 +56,10 @@ public class LightTest {
             System.out.println(lig);
         }
     }
+
+    @Test
+    public void findLightById(){
+        Light light = lightService.findLightById(1);
+        System.out.println(light);
+    }
 }
