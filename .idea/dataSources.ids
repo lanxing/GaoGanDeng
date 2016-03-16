@@ -13,233 +13,296 @@
       <table id="4" parent="1" name="controllogs"/>
       <table id="5" parent="1" name="lightstatuslogs"/>
       <table id="6" parent="1" name="warninglogs"/>
-      <column id="7" parent="2" name="id">
+      <table id="7" parent="1" name="lightcontrollogs"/>
+      <column id="8" parent="2" name="id">
         <comment>自增，作为灯具的唯一标识</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="8" parent="2" name="device_id">
+      <column id="9" parent="2" name="device_id">
         <comment>灯具的设备ID</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="9" parent="2" name="group_id">
+      <column id="10" parent="2" name="group_id">
         <comment>灯具的组号ID</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="10" parent="2" name="in_group_id">
+      <column id="11" parent="2" name="in_group_id">
         <comment>灯具在该组里的编号</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="11" parent="2" name="create_time">
+      <column id="12" parent="2" name="create_time">
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="12" parent="2" name="modify_time">
+      <column id="13" parent="2" name="modify_time">
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <key id="13" parent="2" name="PRIMARY">
+      <key id="14" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="14" parent="3" name="user_id">
+      <column id="15" parent="3" name="user_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="15" parent="3" name="user_name">
+      <column id="16" parent="3" name="user_name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="16" parent="3" name="password">
+      <column id="17" parent="3" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="17" parent="3" name="authority">
+      <column id="18" parent="3" name="authority">
         <comment>权限信息，0：一般管理员，1：系统管理员</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="18" parent="3" name="phone">
+      <column id="19" parent="3" name="phone">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="19" parent="3" name="address">
+      <column id="20" parent="3" name="address">
         <data-type>longtext</data-type>
       </column>
-      <column id="20" parent="3" name="create_time">
+      <column id="21" parent="3" name="create_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="21" parent="3" name="modify_time">
+      <column id="22" parent="3" name="modify_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <key id="22" parent="3" name="PRIMARY">
+      <key id="23" parent="3" name="PRIMARY">
         <columns>user_id</columns>
         <primary>1</primary>
       </key>
-      <column id="23" parent="4" name="id">
+      <column id="24" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="24" parent="4" name="open_time">
+      <column id="25" parent="4" name="open_time">
         <comment>灯具开启时间，为空则表示没有开的动作</comment>
         <data-type>datetime</data-type>
       </column>
-      <column id="25" parent="4" name="close_time">
+      <column id="26" parent="4" name="close_time">
         <comment>灯具关闭时间，为空没有关的动作</comment>
         <data-type>datetime</data-type>
       </column>
-      <column id="26" parent="4" name="control_user_id">
+      <column id="27" parent="4" name="control_user_id">
         <comment>操作人员id，记录操作人员</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="27" parent="4" name="light_ids">
+      <column id="28" parent="4" name="light_ids">
         <comment>操作灯的id，用;隔开，例如&quot;3;5;6;7&quot;则表示对3，5,6,7四盏灯进行操作</comment>
         <mandatory>1</mandatory>
         <data-type>varchar(500)</data-type>
       </column>
-      <column id="28" parent="4" name="status">
+      <column id="29" parent="4" name="status">
         <comment>任务执行状态，0：未执行，1：已完成</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="29" parent="4" name="create_time">
+      <column id="30" parent="4" name="cmd">
+        <comment>命令类型，0：关灯，1：开灯，</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="4" name="bright">
+        <comment>光照强度</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="32" parent="4" name="create_time">
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="30" parent="4" name="modify_time">
+      <column id="33" parent="4" name="modify_time">
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <index id="31" parent="4" name="fk_controllog_1_idx">
+      <index id="34" parent="4" name="fk_controllog_1_idx">
         <columns>control_user_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="32" parent="4" name="PRIMARY">
+      <key id="35" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="33" parent="4" name="fk_controllog_1">
+      <foreign-key id="36" parent="4" name="fk_controllog_1">
         <columns>control_user_id</columns>
         <ref-key>~.users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="34" parent="5" name="id">
+      <column id="37" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="35" parent="5" name="light_id">
+      <column id="38" parent="5" name="light_id">
         <comment>灯具ID，和lights表中的id</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="36" parent="5" name="light_vol">
+      <column id="39" parent="5" name="light_vol">
         <comment>灯具电压</comment>
         <mandatory>1</mandatory>
         <data-type>double</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="37" parent="5" name="light_cur">
+      <column id="40" parent="5" name="light_cur">
         <comment>灯具电流</comment>
         <mandatory>1</mandatory>
         <data-type>double</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="38" parent="5" name="light_pow">
+      <column id="41" parent="5" name="light_pow">
         <comment>灯具功率</comment>
         <mandatory>1</mandatory>
         <data-type>double</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="39" parent="5" name="light_bright">
+      <column id="42" parent="5" name="light_bright">
         <comment>灯具亮度</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="40" parent="5" name="envi_bright">
+      <column id="43" parent="5" name="envi_bright">
         <comment>环境亮度</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="41" parent="5" name="temperature">
+      <column id="44" parent="5" name="temperature">
         <comment>环境温度</comment>
         <mandatory>1</mandatory>
         <data-type>double</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="42" parent="5" name="create_time">
+      <column id="45" parent="5" name="create_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="43" parent="5" name="modify_time">
+      <column id="46" parent="5" name="modify_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <index id="44" parent="5" name="fk_lightstatus_1_idx">
+      <index id="47" parent="5" name="fk_lightstatus_1_idx">
         <columns>light_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="45" parent="5" name="PRIMARY">
+      <key id="48" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="46" parent="5" name="fk_lightstatus_1">
+      <foreign-key id="49" parent="5" name="fk_lightstatus_1">
         <columns>light_id</columns>
         <ref-key>~.lights.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="47" parent="6" name="id">
+      <column id="50" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="48" parent="6" name="light_id">
+      <column id="51" parent="6" name="light_id">
         <comment>灯具ID，对应lights中的id</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="49" parent="6" name="status">
+      <column id="52" parent="6" name="status">
         <comment>报警信息处理情况，0：未处理，1：已处理</comment>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="50" parent="6" name="info">
+      <column id="53" parent="6" name="info">
         <comment>报警消息</comment>
         <data-type>mediumtext</data-type>
       </column>
-      <column id="51" parent="6" name="create_time">
+      <column id="54" parent="6" name="create_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <column id="52" parent="6" name="modify_time">
+      <column id="55" parent="6" name="modify_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
         <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
-      <index id="53" parent="6" name="fk_warninglog_1_idx">
+      <index id="56" parent="6" name="fk_warninglog_1_idx">
         <columns>light_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="54" parent="6" name="PRIMARY">
+      <key id="57" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="55" parent="6" name="fk_warninglog_1">
+      <foreign-key id="58" parent="6" name="fk_warninglog_1">
+        <columns>light_id</columns>
+        <ref-key>~.lights.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="59" parent="7" name="id">
+        <comment>任务id，唯一标识该任务</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="7" name="light_id">
+        <comment>灯具id，对应lights表中的id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="7" name="cmd">
+        <comment>命令类型，0：关，1：开</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="62" parent="7" name="bright">
+        <comment>灯具的亮度</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="63" parent="7" name="status">
+        <comment>任务状态，0：未执行，1：已执行，2：覆盖，3：发送失败</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="64" parent="7" name="cmd_time">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="65" parent="7" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="66" parent="7" name="modify_time">
+        <comment>任务执行时间，主要供查询使用</comment>
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="67" parent="7" name="fk_lightcontrollogs_1_idx">
+        <columns>light_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="68" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="69" parent="7" name="fk_lightcontrollogs_1">
         <columns>light_id</columns>
         <ref-key>~.lights.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

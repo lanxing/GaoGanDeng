@@ -16,7 +16,7 @@
     </select>
 
     <select id="findLightById" resultMap="LightResult" parameterType="Integer">
-        SELECT * FROM lights WHERE id = ${id}
+        SELECT * FROM lights WHERE id = #{lightId}
     </select>
 
     <select id="findLight" resultMap="LightResult" parameterType="Light">

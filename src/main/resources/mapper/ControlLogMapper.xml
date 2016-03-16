@@ -24,17 +24,23 @@
         <result property="infoTime" column="create_time"/>
         <result property="status" column="status"/>
         <result property="lightIds" column="light_ids"/>
+        <result property="bright" column="bright"/>
+        <result property="cmd" column="cmd"/>
         <association property="user" column="control_user_id" select="findUserById"/>
     </resultMap>
 
     <insert id="insertControlLog" parameterType="ControlLog" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO controllogs (open_time, close_time, control_user_id, light_ids, status) VALUES (
-        #{openTime}, #{closeTime}, #{user.userId}, #{light_ids}, #{status}
+        INSERT INTO controllogs (open_time, close_time, control_user_id, light_ids, status, bright, cmd) VALUES (
+        #{openTime}, #{closeTime}, #{user.userId}, #{light_ids}, #{status}, #{bright}, #{cmd}
         )
     </insert>
 
     <select id="findControlLogByTime" parameterType="com.gaogandeng.QueryCondition.ControlLogQuery" resultMap="ControlLogResult">
         SELECT * FROM controllogs WHERE TRUE
+        <if test="id != null">
+            AND id = #{id}
+        </if>
+
         <if test="userId != null">
             AND control_user_id = #{userId}
         </if>
@@ -45,6 +51,10 @@
 
         <if test="endTime != null">
             AND create_time &lt;= #{endTime}
+        </if>
+
+        <if test="cmd != null">
+            AND cmd = #{cmd}
         </if>
     </select>
 

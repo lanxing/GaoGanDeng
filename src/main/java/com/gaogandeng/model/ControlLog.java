@@ -12,12 +12,30 @@ public class ControlLog implements Serializable {
 
     private Integer id;             //控制编号
     private Date openTime;          //开灯时间，为null表示没有开灯动作
-    private Date closeTime;         //关灯时间，为null表示无关灯动作
+    private Date closeTime;         //关灯时间，为null表示无关灯动作，若开灯关灯都为null则表示即时消息
     private User user;              //执行人员
     private List<Light> lights;     //灯具列表
     private String lightIds;       //灯具ids，以“;”分开
     private Date infoTime;          //执行时间
-    private Integer status = 1;         //执行状态（0：未执行，1：执行）
+    private Integer status = 1;     //执行状态（0：未执行，1：执行, 2:失败）
+    private Integer bright;         //灯光亮度
+    private Integer cmd;            //命令类型0：关灯操作，1：开灯操作
+
+    public Integer getBright() {
+        return bright;
+    }
+
+    public void setBright(Integer bright) {
+        this.bright = bright;
+    }
+
+    public Integer getCmd() {
+        return cmd;
+    }
+
+    public void setCmd(Integer cmd) {
+        this.cmd = cmd;
+    }
 
     public String getLightIds() {
         return lightIds;
@@ -95,9 +113,11 @@ public class ControlLog implements Serializable {
                 ", closeTime=" + closeTime +
                 ", user=" + user +
                 ", lights=" + lights +
-                ", lightIds=" + lightIds +
+                ", lightIds='" + lightIds + '\'' +
                 ", infoTime=" + infoTime +
                 ", status=" + status +
+                ", bright=" + bright +
+                ", cmd=" + cmd +
                 '}';
     }
 }

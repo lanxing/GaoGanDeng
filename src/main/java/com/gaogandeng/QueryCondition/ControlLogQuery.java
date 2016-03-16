@@ -12,6 +12,24 @@ public class ControlLogQuery implements Serializable{
     private Date startTime;
     private Date endTime;
     private Integer userId;
+    private Integer cmd;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getCmd() {
+        return cmd;
+    }
+
+    public void setCmd(Integer cmd) {
+        this.cmd = cmd;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

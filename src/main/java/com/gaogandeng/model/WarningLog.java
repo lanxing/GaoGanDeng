@@ -12,7 +12,7 @@ public class WarningLog implements Serializable {
     private Integer id;         //报警id
     private Light light;        //报警灯具
     private String info;        //报警信息
-    private Integer status;     //报警状态（0：未处理，1：已处理）
+    private Integer status = 0;     //报警状态（0：未处理，1：已处理）
     private Date infoTime;      //报警日期
 
     public static long getSerialVersionUID() {
