@@ -135,7 +135,15 @@
       <version>2.5</version>
       <type>pom</type>
     </dependency>
+
+    <!--guava库-->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
+    </dependency>
   </dependencies>
+
   <build>
     <finalName>gaogandeng</finalName>
   </build>

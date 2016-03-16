@@ -42,4 +42,10 @@ public class UserTest {
         user.setPassword("123456");
         userService.insertUser(user);
     }
+
+    @Test
+    public void findUserByName(){
+        User user = userService.findUserByName("张三");
+        System.out.println(user);
+    }
 }

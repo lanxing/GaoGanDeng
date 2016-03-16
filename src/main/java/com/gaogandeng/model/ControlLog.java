@@ -15,8 +15,17 @@ public class ControlLog implements Serializable {
     private Date closeTime;         //关灯时间，为null表示无关灯动作
     private User user;              //执行人员
     private List<Light> lights;     //灯具列表
+    private String lightIds;       //灯具ids，以“;”分开
     private Date infoTime;          //执行时间
-    private Integer status;         //执行状态（0：未执行，1：执行）
+    private Integer status = 1;         //执行状态（0：未执行，1：执行）
+
+    public String getLightIds() {
+        return lightIds;
+    }
+
+    public void setLightIds(String lightIds) {
+        this.lightIds = lightIds;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -86,6 +95,7 @@ public class ControlLog implements Serializable {
                 ", closeTime=" + closeTime +
                 ", user=" + user +
                 ", lights=" + lights +
+                ", lightIds=" + lightIds +
                 ", infoTime=" + infoTime +
                 ", status=" + status +
                 '}';
