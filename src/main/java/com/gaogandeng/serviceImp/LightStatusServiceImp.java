@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by lanxing on 16-3-16.
  */
-@Service("lightStatusService")
+@Service("lightStatusLogService")
 public class LightStatusServiceImp implements LightStatusLogService {
 
     private LightStatusLogMapper lightStatusLogMapper;
