@@ -23,4 +23,11 @@ public interface LightStatusLogService {
      * @return
      */
     List<LightStatusLog> findLightStatus(LightStatusQuery query);
+
+    /**
+     * 查找最新的状态信息
+     * @param lightId
+     * @return
+     */
+    LightStatusLog findLatestStatus(Integer lightId);
 }

@@ -5,7 +5,6 @@ import com.gaogandeng.Enum.CmdType;
 import com.gaogandeng.QueryCondition.ControlLogQuery;
 import com.gaogandeng.QueryCondition.LightControlQuery;
 import com.gaogandeng.model.ControlLog;
-import com.gaogandeng.model.Light;
 import com.gaogandeng.model.LightControlLog;
 import com.gaogandeng.service.ControlLogService;
 import com.gaogandeng.service.LightControlLogService;
@@ -165,10 +164,13 @@ public class CmdControlService {
     public String getCmdInfo(String deviceNo, String srcAddress, String funcCode, String data){
         //TODO 根据设备号，源地址，功能码，数据来获得要发送的指令，需要加上数据长度和校验码
 
+        String len = Integer.toHexString(data.length());
+        if(len.length() < 2){
+            len = "0" + len;
+        }
+
+
         return null;
     }
 
-    public List<Light> queryLights(Light light){
-        return lightService.findLight(light);
-    }
 }

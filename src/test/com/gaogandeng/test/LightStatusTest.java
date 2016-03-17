@@ -55,4 +55,10 @@ public class LightStatusTest {
             System.out.println(log);
         }
     }
+
+    @Test
+    public void latestTest(){
+        LightStatusLog light = lightStatusLogService.findLatestStatus(1);
+        System.out.println(light);
+    }
 }

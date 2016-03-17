@@ -11,4 +11,5 @@ import java.util.List;
 public interface LightStatusLogMapper {
     void insertLightStatus(LightStatusLog lightStatusLog);
     List<LightStatusLog> findLightStatus(LightStatusQuery query);
+    LightStatusLog findLatestStatus(Integer lightId);
 }

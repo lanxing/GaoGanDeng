@@ -48,4 +48,8 @@
         </if>
     </select>
 
+    <select id="findLatestStatus" resultMap="LightStatusResult" parameterType="Integer">
+        SELECT * FROM lightstatuslogs WHERE light_id = #{lightId} ORDER BY create_time DESC limit 1
+    </select>
+
 </mapper>

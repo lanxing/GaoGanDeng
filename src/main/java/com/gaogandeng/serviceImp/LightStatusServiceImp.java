@@ -29,4 +29,8 @@ public class LightStatusServiceImp implements LightStatusLogService {
     public List<LightStatusLog> findLightStatus(LightStatusQuery query) {
         return lightStatusLogMapper.findLightStatus(query);
     }
+
+    public LightStatusLog findLatestStatus(Integer lightId) {
+        return lightStatusLogMapper.findLatestStatus(lightId);
+    }
 }
