@@ -23,13 +23,15 @@
         <result property="bright" column="light_bright"/>
         <result property="enviBright" column="envi_bright"/>
         <result property="temperature" column="temperature"/>
+        <result property="temperature1" column="temperature1"/>
+        <result property="temperature2" column="temperature2"/>
         <result property="infoTime" column="create_time"/>
         <association property="light" column="light_id" select="findLightById"/>
     </resultMap>
 
     <insert id="insertLightStatus" parameterType="LightStatusLog" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO lightstatuslogs (light_id, light_vol, light_cur, light_pow, light_bright, envi_bright, temperature) VALUES (
-        #{light.id}, #{vol}, #{cur}, #{pow}, #{bright}, #{enviBright}, #{temperature}
+        INSERT INTO lightstatuslogs (light_id, light_vol, light_cur, light_pow, light_bright, envi_bright, temperature, temperature1, temperature2) VALUES (
+        #{light.id}, #{vol}, #{cur}, #{pow}, #{bright}, #{enviBright}, #{temperature}, #{temperature3}, #{temperature2}
         )
     </insert>
 

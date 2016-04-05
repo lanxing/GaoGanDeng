@@ -63,8 +63,8 @@ public class LightStatusService {
         List<Light> lights = lightService.findAllLights();
         Map<String, Map<String, List<Light> > > devices = Maps.newHashMap();
 
-        String deviceId = null;
-        String groupId = null;
+        String deviceId;
+        String groupId;
         for (Light light : lights){
             deviceId = light.getDeviceId();
             if(!devices.containsKey(deviceId)){
@@ -81,5 +81,25 @@ public class LightStatusService {
         }
 
         return devices;
+    }
+
+    /**
+     * 查询所有灯具最近的状态信息
+     * @return
+     */
+    public List<LightStatusLog> queryLatestStatus(){
+        List<LightStatusLog> lists = Lists.newArrayList();
+        List<Light> lights = lightService.findAllLights();
+        LightStatusLog status = null;
+        if(lights != null && !lights.isEmpty()){
+            for(Light light : lights){
+                status = lightStatusLogService.findLatestStatus(light.getId());
+                if(status != null){
+                    lists.add(status);
+                }
+            }
+        }
+
+        return lists;
     }
 }

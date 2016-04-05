@@ -17,7 +17,27 @@ public class LightStatusLog implements Serializable {
     private Integer bright;             //灯具亮度
     private Integer enviBright;         //环境亮度
     private Double temperature;         //温度
+    private Double temperature1;         //温度
+
+    private Double temperature2;         //温度
+
     private Date infoTime;              //状态时间
+
+    public Double getTemperature1() {
+        return temperature1;
+    }
+
+    public void setTemperature1(Double temperature1) {
+        this.temperature1 = temperature1;
+    }
+
+    public Double getTemperature2() {
+        return temperature2;
+    }
+
+    public void setTemperature2(Double temperature2) {
+        this.temperature2 = temperature2;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -105,7 +125,9 @@ public class LightStatusLog implements Serializable {
                 ", pow=" + pow +
                 ", bright=" + bright +
                 ", enviBright=" + enviBright +
-                ", temprature=" + temperature +
+                ", temperature=" + temperature +
+                ", temperature1=" + temperature1 +
+                ", temperature2=" + temperature2 +
                 ", infoTime=" + infoTime +
                 '}';
     }

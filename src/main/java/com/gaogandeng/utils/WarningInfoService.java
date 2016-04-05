@@ -3,6 +3,7 @@ package com.gaogandeng.utils;
 import com.gaogandeng.QueryCondition.WarningLogQuery;
 import com.gaogandeng.model.WarningLog;
 import com.gaogandeng.service.WarningLogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class WarningInfoService {
     private WarningLogService warningLogService;
 
+    @Autowired
     public void setWarningLogService(WarningLogService warningLogService) {
         this.warningLogService = warningLogService;
     }
