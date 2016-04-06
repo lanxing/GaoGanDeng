@@ -1319,7 +1319,7 @@
       <workItem from="1458180115453" duration="34000" />
       <workItem from="1458180232654" duration="26655000" />
       <workItem from="1458955638555" duration="94866000" />
-      <workItem from="1459300131429" duration="72848000" />
+      <workItem from="1459300131429" duration="72889000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1458053604954</created>
@@ -1381,7 +1381,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459939862921</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成大部分功能&#10;&#10;">
+      <created>1459940077261</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1459940077261</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1417,7 +1423,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246893000" />
+    <option name="totallyTimeSpent" value="246934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1479,7 +1485,8 @@
     <MESSAGE value="增加ControlLog的ORM&#10;" />
     <MESSAGE value="完成所有ORM配置，并建立了util工具类，可以直接在里面写项目代码&#10;" />
     <MESSAGE value="控制器已调试完成，可以增加控制器了&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="控制器已调试完成，可以增加控制器了&#10;&#10;" />
+    <MESSAGE value="完成大部分功能&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成大部分功能&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
